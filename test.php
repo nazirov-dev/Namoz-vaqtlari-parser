@@ -11,4 +11,4 @@
 if($result->status)
   echo "Azon ".$result->result->sahar."<br>Quyosh ".$result->result->quyosh."<br>Peshin ".$result->result->peshin."<br>Asr ".$result->result->asr."<br>Shom ".$result->result->shom."<br>Xufton ".$result->result->xufton;
 elseif(!$result->status)
-  echo $result->error;
+  echo $result->result;
