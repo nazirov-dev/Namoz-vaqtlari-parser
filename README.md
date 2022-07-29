@@ -1,7 +1,5 @@
 # Namoz-vaqtlari-parser
 
-# Foydalanish
-
 ## Foyalanish uchun `test.php`ni ishga tushiring
 
 ```shell
