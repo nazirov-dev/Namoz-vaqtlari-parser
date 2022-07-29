@@ -4,7 +4,7 @@ class Namoz{
     private string $city;
     private string $type;
 
-    function __construct(string $city = "Tashkent", string $type = "bugungi")
+    function __construct(string $city = "Toshkent", string $type = "bugungi")
     {
         $this->city = $city;
         $this->type = $type;
@@ -28,7 +28,10 @@ class Namoz{
             'margilon'=>13
         ]; //Qabul qilinadigan shaharlar
 
-
+        if(!isset($citys[strtolower($_GET['city'])])){
+            echo json_encode(['status'=>false, 'result'=>"Kiritilgan hudud topilmadi!"], JSON_PRETTY_PRINT);
+            exit;
+        }
         $oy = date("m");
         if($oy[0] == "0") $oy = str_replace("0", "", $oy);
 
