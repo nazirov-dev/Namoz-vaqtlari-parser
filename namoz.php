@@ -2,8 +2,8 @@
 
 class Namoz
 {
-    private string $city;
-    private string $type;
+    private $city;
+    private $type;
 
     function __construct(string $city = "Toshkent", string $type = "bugungi")
     {
