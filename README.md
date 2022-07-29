@@ -4,7 +4,6 @@
 
 ## Foyalanish uchun namuna
 ```php
-<?php
 
 ```
 
