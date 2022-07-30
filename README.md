@@ -4,8 +4,7 @@
 ```php
 <?php
 
-date_default_timezone_set('Asia/Tashkent')
-;
+date_default_timezone_set('Asia/Tashkent');
 require 'namoz.php';
 $namoz = new Namoz("Toshkent", "bugungi");
 print_r($namoz->get());
