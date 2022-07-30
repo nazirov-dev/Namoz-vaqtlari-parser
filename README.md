@@ -3,10 +3,8 @@
 ## Foyalanish uchun namuna
 ```php
 <?php
-
-date_default_timezone_set('Asia/Tashkent');
 require 'namoz.php';
 $namoz = new Namoz("Toshkent", "bugungi");
-print_r($namoz->get());
+echo json_encode($namoz->get(), JSON_PRETTY_PRINT);
 ```
 Author: [Abdulaziz Nazirov](https://github.com/Nazirov-Dev)
