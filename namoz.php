@@ -30,17 +30,18 @@ class Namoz
         ]; //Qabul qilinadigan shaharlar
 
         
-        if (!isset($citys[strtolower($_GET['city'])])) {
+        if (!isset($citys[strtolower($this->city)])) {
             echo json_encode(['status' => false, 'result' => "Kiritilgan hudud topilmadi!"], JSON_PRETTY_PRINT);
             exit;
         }
         $oy = date("m");
         if ($oy[0] == "0") $oy = str_replace("0", "", $oy);
 
-        $get = file_get_contents("https://islom.uz/vaqtlar/" . $citys[str_replace("'", "", strtolower($_GET['city']))] . "/" . $oy);
+        $get = file_get_contents("https://islom.uz/vaqtlar/" . $citys[str_replace("'", "", strtolower($this->city))] . "/" . $oy);
 
         $response = [
             'status' => true,
+            'result'=>[],
             'dev' => "Abdulaziz Nazirov (@Nazirov_Dev)"
         ];
 
@@ -55,12 +56,12 @@ class Namoz
             exit;
         }
         $array = explode("\n", strip_tags($array));
-        $sahar = trim($array[$_GET['type'] == "bugungi" ? 4 : 14]);
-        $quyosh = trim($array[$_GET['type'] == "bugungi" ? 5 : 15]);
-        $peshin = trim($array[$_GET['type'] == "bugungi" ? 6 : 16]);
-        $asr = trim($array[$_GET['type'] == "bugungi" ? 7 : 17]);
-        $shom = trim($array[$_GET['type'] == "bugungi" ? 8 : 18]);
-        $xufton = trim($array[$_GET['type'] == "bugungi" ? 9 : 19]);
+        $sahar = trim($array[$this->type == "bugungi" ? 4 : 14]);
+        $quyosh = trim($array[$this->type == "bugungi" ? 5 : 15]);
+        $peshin = trim($array[$this->type == "bugungi" ? 6 : 16]);
+        $asr = trim($array[$this->type == "bugungi" ? 7 : 17]);
+        $shom = trim($array[$this->type == "bugungi" ? 8 : 18]);
+        $xufton = trim($array[$this->type == "bugungi" ? 9 : 19]);
         $response['result'] = [
             'sahar' => $sahar,
             'quyosh' => $quyosh,
